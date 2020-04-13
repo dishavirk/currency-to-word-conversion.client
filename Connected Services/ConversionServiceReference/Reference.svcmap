@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ae42f917-f1df-4826-9766-a6f805edb158" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:59617/ConversionService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ConversionService2.xsd" MetadataType="Schema" ID="059e32e3-acd1-42b5-8820-1b233ffa0441" SourceId="1" SourceUrl="http://localhost:59617/ConversionService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ConversionService.disco" MetadataType="Disco" ID="e6b38041-f672-4535-893a-e5d3491de27c" SourceId="1" SourceUrl="http://localhost:59617/ConversionService.svc?disco" />
+    <MetadataFile FileName="ConversionService.xsd" MetadataType="Schema" ID="57f758f2-b009-4c5b-b68b-ea909e3f3cb4" SourceId="1" SourceUrl="http://localhost:59617/ConversionService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ConversionService1.xsd" MetadataType="Schema" ID="04380b13-3165-4030-ab28-328d7c518ec6" SourceId="1" SourceUrl="http://localhost:59617/ConversionService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ConversionService.wsdl" MetadataType="Wsdl" ID="f556c49e-a58a-4c7b-bd70-f0ec05b27b74" SourceId="1" SourceUrl="http://localhost:59617/ConversionService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

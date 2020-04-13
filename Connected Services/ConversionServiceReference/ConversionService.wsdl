@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ConversionService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:59617/ConversionService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:59617/ConversionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/currency_to_word_conversion.service" />
+      <xsd:import schemaLocation="http://localhost:59617/ConversionService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IConversionService_convertNumbersToWords_InputMessage">
+    <wsdl:part name="parameters" element="tns:convertNumbersToWords" />
+  </wsdl:message>
+  <wsdl:message name="IConversionService_convertNumbersToWords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:convertNumbersToWordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConversionService_convertNumbersToWords_ValidationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/currency_to_word_conversion.service" name="detail" element="q1:ValidationFault" />
+  </wsdl:message>
+  <wsdl:message name="IConversionService_convertNumbersToWords_UnexpectedServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/currency_to_word_conversion.service" name="detail" element="q2:UnexpectedServiceFault" />
+  </wsdl:message>
+  <wsdl:portType name="IConversionService">
+    <wsdl:operation name="convertNumbersToWords">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConversionService/convertNumbersToWords" message="tns:IConversionService_convertNumbersToWords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConversionService/convertNumbersToWordsResponse" message="tns:IConversionService_convertNumbersToWords_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IConversionService/convertNumbersToWordsValidationFaultFault" name="ValidationFaultFault" message="tns:IConversionService_convertNumbersToWords_ValidationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IConversionService/convertNumbersToWordsUnexpectedServiceFaultFault" name="UnexpectedServiceFaultFault" message="tns:IConversionService_convertNumbersToWords_UnexpectedServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IConversionService" type="tns:IConversionService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="convertNumbersToWords">
+      <soap:operation soapAction="http://tempuri.org/IConversionService/convertNumbersToWords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ValidationFaultFault">
+        <soap:fault use="literal" name="ValidationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnexpectedServiceFaultFault">
+        <soap:fault use="literal" name="UnexpectedServiceFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConversionService">
+    <wsdl:port name="BasicHttpBinding_IConversionService" binding="tns:BasicHttpBinding_IConversionService">
+      <soap:address location="http://localhost:59617/ConversionService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
